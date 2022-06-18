@@ -1,0 +1,204 @@
+/* VARIAVEIS */
+:root {
+  --header-color: #000;
+  --h1-color: #393c41;
+  --h2-color: #6e7378;
+  --btnDark-bg: rgba(23, 26, 32, 0.8);
+  --btnLight-bg: rgba(255, 255, 255, 0.65);
+  --btnDark-color: #fff;
+  --btnLight-color: #000;
+}
+
+/* FONTES */
+@font-face {
+  font-family: GothamMedium;
+  src: url(../fonts/GothamMedium.otf);
+  
+}
+@font-face {
+  font-family: GothamBook;
+  src: url(../fonts/GothamBookRegular.otf);
+}
+body {
+  font-family: "GothamMedium", sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+/* HEADER */
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+header ul,
+header li {
+  list-style: none;
+}
+.logo {
+  width: 200px;
+  margin-left: 20px;
+}
+
+.meio ul {
+  display: flex;
+}
+
+.meio li {
+  margin: 0 10px;
+}
+.meio li a {
+  text-decoration: none;
+  color: var(--header-color);
+  text-transform: uppercase; /* deixa todas as letras maiúsculas*/
+}
+
+.ladoDireito ul {
+  display: flex;
+}
+
+.ladoDireito li {
+  margin: 0 10px;
+}
+
+.ladoDireito a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--header-color);
+}
+.menu-icon {
+  width: 20px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu-icon div {
+  height: 2px;
+  background-color: var(--header-color);
+  cursor: pointer;
+}
+
+/* MEIO */
+
+main {
+  background-image: url(../assets/img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.info {
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: normal;
+  color: var(--h1-color);
+}
+main h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "GothamBook", Arial, Helvetica, sans-serif;
+  color: var(--h2-color);
+}
+
+main h2 a {
+  color: var(--h1-color);
+}
+
+/*  FOOTER */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+}
+
+.button-area {
+  display: flex;
+  justify-content: center;
+}
+
+.button-area a {
+  display: block;
+  width: 220px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 15px;
+  border-radius: 30px;
+  margin: 0 10px;
+}
+
+.btnDark {
+  background-color: var(--btnDark-bg);
+  color: var(--btnDark-color);
+}
+.btnLight {
+  background-color: var(--btnLight-bg);
+  color: var(--btnLight-color);
+}
+.arrow-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  height: 30px;
+}
+
+.arrow {
+  height: 15px;
+  animation-name: arrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes arrow {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 15px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1100px) {
+  header .meio {
+    display: none;
+  }
+  header .ladoDireito {
+    display: none;
+  }
+  header .ladoDireito ul li .menu {
+    display: block;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .button-area {
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-area a {
+    margin: 10px 20px;
+    width: calc(100vw - 60px);
+  }
+}
